@@ -1,4 +1,4 @@
-# stack-machine-c
+# stack-machine-go
 
 Implementation of an interpreter for a simple stack machine language.
 
