@@ -3,27 +3,36 @@ package main
 import (
 	"fmt"
 	"io/ioutil"
+	"os"
 
 	"github.com/stack-machine-go/src/in"
 	"github.com/stack-machine-go/src/tk"
 )
 
 func main() {
-	program, _ := ioutil.ReadFile("test.stack")
-	instructions := tk.ParseExpression(string(program))
+	if len(os.Args) >= 2 {
+		program, err := ioutil.ReadFile(os.Args[1])
 
-	interpreter, err := in.New(instructions)
+		if err != nil {
+			fmt.Println(err)
+			return
+		}
 
-	if err != nil {
-		fmt.Println(err)
-		return
+		instructions := tk.ParseExpression(string(program))
+
+		interpreter, err := in.New(instructions)
+		if err != nil {
+			fmt.Println(err)
+			return
+		}
+
+		err = interpreter.Run()
+
+		if err != nil {
+			fmt.Println(err)
+			return
+		}
+	} else {
+		fmt.Println("No file specified")
 	}
-
-	err = interpreter.Run()
-
-	if err != nil {
-		fmt.Println(err)
-		return
-	}
-
 }
