@@ -14,4 +14,5 @@ const (
 	Duplicate Type = 7
 	Mul       Type = 8
 	Div       Type = 9
+	Swap      Type = 10
 )

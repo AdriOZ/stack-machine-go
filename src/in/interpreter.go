@@ -75,6 +75,13 @@ func (inter *Interpreter) Run() error {
 					num2 := inter.stack.Pop().(float64)
 					inter.stack.Push(num1 / num2)
 				}
+			case tk.Swap:
+				if inter.stack.Len() >= 2 {
+					num1 := inter.stack.Pop().(float64)
+					num2 := inter.stack.Pop().(float64)
+					inter.stack.Push(num1)
+					inter.stack.Push(num2)
+				}
 			case tk.IfEq:
 				if inter.stack.Len() > 0 && inter.stack.Peek().(float64) != 0.0 {
 					if *current.Jmp < 1 || *current.Jmp > inter.lenght {
