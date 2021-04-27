@@ -13,4 +13,5 @@ const (
 	PrintChar Type = 6
 	Duplicate Type = 7
 	Mul       Type = 8
+	Div       Type = 9
 )

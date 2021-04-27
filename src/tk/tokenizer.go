@@ -40,6 +40,8 @@ func ParseExpression(program string) *Instructions {
 			result[uint32(index+1)] = NewToken(Add)
 		case strings.HasPrefix(trimmed, "MUL"):
 			result[uint32(index+1)] = NewToken(Mul)
+		case strings.HasPrefix(trimmed, "DIV"):
+			result[uint32(index+1)] = NewToken(Div)
 		case strings.HasPrefix(trimmed, "IFEQ"):
 			parts := strings.Split(trimmed, " ")
 
