@@ -1,0 +1,19 @@
+# Print Hello World
+PUSH 0
+
+PUSH 33     # !
+PUSH 100    # d
+PUSH 108    # l
+PUSH 114    # r
+PUSH 111    # o
+PUSH 87     # w
+PUSH 32     # 
+PUSH 111    # o
+PUSH 108    # l
+DUP         # l
+PUSH 101    # e
+PUSH 72     # H
+
+PRINTC
+POP
+IFEQ 17

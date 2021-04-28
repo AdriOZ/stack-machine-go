@@ -1,0 +1,9 @@
+# Count from 10 to 0 printing a new line between numbers
+PUSH 10
+PRINTI
+PUSH -1
+ADD
+PUSH 10
+PRINTC
+POP
+IFEQ 3
