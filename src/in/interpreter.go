@@ -63,6 +63,12 @@ func (inter *Interpreter) Run() error {
 					num2 := inter.stack.Pop().(float64)
 					inter.stack.Push(num1 + num2)
 				}
+			case tk.Sub:
+				if inter.stack.Len() >= 2 {
+					num1 := inter.stack.Pop().(float64)
+					num2 := inter.stack.Pop().(float64)
+					inter.stack.Push(num1 - num2)
+				}
 			case tk.Mul:
 				if inter.stack.Len() >= 2 {
 					num1 := inter.stack.Pop().(float64)

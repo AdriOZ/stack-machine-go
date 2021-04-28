@@ -15,4 +15,5 @@ const (
 	Mul       Type = 8
 	Div       Type = 9
 	Swap      Type = 10
+	Sub       Type = 11
 )
