@@ -78,6 +78,8 @@ func ParseExpression(program string) *Instructions {
 			result[uint32(index+1)] = NewToken(PrintNumb)
 		case strings.HasPrefix(trimmed, "PRINTC"):
 			result[uint32(index+1)] = NewToken(PrintChar)
+		case strings.HasPrefix(trimmed, "PRINTI"):
+			result[uint32(index+1)] = NewToken(PrintInt)
 		case strings.HasPrefix(trimmed, "DUP"):
 			result[uint32(index+1)] = NewToken(Duplicate)
 		default:

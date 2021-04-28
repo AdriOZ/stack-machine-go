@@ -106,6 +106,10 @@ func (inter *Interpreter) Run() error {
 				if inter.stack.Len() > 0 {
 					fmt.Printf("%f", inter.stack.Peek().(float64))
 				}
+			case tk.PrintInt:
+				if inter.stack.Len() > 0 {
+					fmt.Printf("%d", int(inter.stack.Peek().(float64)))
+				}
 			case tk.PrintChar:
 				if inter.stack.Len() > 0 {
 					fmt.Print(string(rune(int(inter.stack.Peek().(float64)))))
