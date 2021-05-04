@@ -1,0 +1,36 @@
+# Numbers to compare
+PUSH 18
+PUSH 17
+
+# Decrease the first number one
+SWAP
+PUSH -1
+ADD
+IFEQ 13
+JUMP 29
+
+# Decrease the second number by one
+SWAP
+PUSH -1
+ADD
+IFEQ 6
+JUMP 20
+
+# Print Yes
+PUSH 89
+PRINTC
+PUSH 101
+PRINTC
+PUSH 115
+PRINTC
+JUMP 35
+
+# Print No
+PUSH 78
+PRINTC
+PUSH 111
+PRINTC
+
+# New line
+PUSH 10
+PRINTC
